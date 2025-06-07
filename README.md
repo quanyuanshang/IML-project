@@ -1,14 +1,14 @@
 ## LFW 人脸识别项目（PCA + SVM）
 
-本项目使用 Python 和 scikit-learn 实现了一个基于 LFW（Labeled Faces in the Wild）数据集的人脸识别系统。主要方法包括主成分分析（PCA）进行降维，以及支持向量机（SVM）进行分类。
+本项目使用 Python 和 scikit-learn 实现了一个基于 LFW（Labeled Faces in the Wild）数据集的人脸识别系统。主要方法包括增强鲁棒性的数据预处理（局部对比度增强CLAHE、边缘锐化增强、保边滤波），再通过主成分分析（PCA）进行降维，以及支持向量机（SVM）进行分类。
 
-------
+---
 
 ### 项目结构
 
 - `LFW_2.ipynb`: 主代码文件，包含所有数据加载、处理和模型训练/评估过程。
 
-------
+---
 
 ### 快速开始
 
@@ -33,19 +33,20 @@ pip install -r requirements.txt
 jupyter notebook LFW_2.ipynb
 ```
 
-------
+---
 
-###  使用的数据集
+### 使用的数据集
 
 - 数据源：`sklearn.datasets.fetch_lfw_people`
 
-------
+---
 
-###  模型结构
+### 模型结构
 
 - **预处理**：
   - 图像灰度化
   - 标准化
+  - 数据增强
 - **降维**：
   - 使用 PCA（主成分保留率为 95%）
 - **分类器**：
@@ -55,9 +56,7 @@ jupyter notebook LFW_2.ipynb
   - 分类报告（precision, recall, f1-score）
   - 混淆矩阵
 
-
-
-------
+---
 
 ### 依赖列表（requirements.txt）
 
@@ -67,5 +66,10 @@ matplotlib
 scikit-learn
 seaborn
 jupyter
+torch
+opencv-python
+scikit-optimize
+pandas
+scipy
+tqdm
 ```
-

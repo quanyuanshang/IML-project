@@ -3,3 +3,9 @@ matplotlib
 scikit-learn
 seaborn
 jupyter
+torch
+opencv-python
+scikit-optimize
+pandas
+scipy
+tqdm
